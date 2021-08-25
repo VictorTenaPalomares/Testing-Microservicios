@@ -1,0 +1,8 @@
+package org.victor.test.springboot.app.repositories;
+
+
+/*Esta es la capa DAO de acceso a datos*/
+/*Aquí usaremos Mocks, es decir, burlaremos su procedencia*/
+public interface BancoRepository {
+ Banco findById (Long id);
+}

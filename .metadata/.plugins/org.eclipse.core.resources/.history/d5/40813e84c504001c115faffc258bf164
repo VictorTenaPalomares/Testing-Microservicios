@@ -1,0 +1,134 @@
+package org.aguzman.appmockito.ejemplos.services;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
+import org.aguzman.appmockito.ejemplos.models.Examen;
+import org.aguzman.appmockito.ejemplos.repositories.ExamenRepository;
+import org.aguzman.appmockito.ejemplos.repositories.PreguntaRepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+class ExamenServiceImplTest {
+	// Mock del repositorio
+	@Mock
+	ExamenRepository repository;
+	PreguntaRepository preguntaRepository;
+
+	// Inyección dentro del servicio
+	@InjectMocks 
+	ExamenService service;
+
+	@BeforeEach
+	void setUp() {
+
+		MockitoAnnotations.openMocks(this);
+		
+		
+		// Simulando antes de cada método (BeforeEach) que se recibe una implementación
+		// del repositorio
+		//repository = mock(ExamenRepository.class);
+		//preguntaRepository = mock(PreguntaRepository.class);
+
+		// Pasamos estos repositorios simulados al servicio y lo tratamos como reales
+		//service = new ExamenServiceImpl(repository, preguntaRepository);
+
+	}
+
+	// Contexto para cuendo vienen datos
+	@Test
+	void findExamenPorNombre() {
+
+		// simulamos los datos que los traemoscomo constante de la clase Datos
+		when(repository.findAllDelRepositorio()).thenReturn(Datos.EXAMENES);
+		// 2. Invocamos el método
+		Optional<Examen> examen = service.findExamenPorNombre("Matemáticas");
+
+		// 3. Comprobamos que exista el objeto
+		assertTrue(examen.isPresent());
+
+		// 4. Comprobamos que contenga los valores esperados expectativa/realidad
+		assertEquals(5L, examen.orElseThrow().getId());
+		assertEquals("Matemáticas", examen.orElseThrow().getNombre());
+
+	}
+
+	// Contexto para cuando nos viene una lista vacía
+	@Test
+	void findExamenPorNombreListaVacia() {
+
+		// simulamos los datos
+		List<Examen> datos = Collections.emptyList();
+
+		// Estamos simulando la obtención de datos
+		when(repository.findAllDelRepositorio()).thenReturn(datos);
+		// 2. Invocamos el método
+		Optional<Examen> examen = service.findExamenPorNombre("Matemáticas");
+
+		// 3. Comprobamos que NO exista el objeto
+		assertFalse(examen.isPresent());
+
+	}
+
+	@Test
+	void testPreguntaExamen() {
+
+		when(repository.findAllDelRepositorio()).thenReturn(Datos.EXAMENES);
+		when(preguntaRepository.buscarPreguntasPorExamenId(7L)).thenReturn(Datos.PREGUNTAS);
+
+		// validar si se ya llamado un determinado método de nuestro mock
+
+		Examen examen = service.buscaExamenPorNombreConPreguntas("Historia");
+
+		assertEquals(5, examen.getPreguntas().size());
+		assertEquals("aritmética", examen.getPreguntas().get(0));
+		assertTrue(examen.getPreguntas().contains("trigonometría"));
+
+	}
+	
+	@Test
+	void testPreguntaExamenVeify() {
+
+		when(repository.findAllDelRepositorio()).thenReturn(Datos.EXAMENES);
+		when(preguntaRepository.buscarPreguntasPorExamenId(5L)).thenReturn(Datos.PREGUNTAS);
+
+		
+
+		Examen examen = service.buscaExamenPorNombreConPreguntas("Matemáticas");
+
+		assertEquals(5, examen.getPreguntas().size());
+		assertEquals("aritmética", examen.getPreguntas().get(0));
+		assertTrue(examen.getPreguntas().contains("trigonometría"));
+		
+		// validar si se ya llamado un determinado método de nuestro mock
+		verify(repository).findAllDelRepositorio();
+		verify(preguntaRepository).buscarPreguntasPorExamenId(5L);
+
+	}
+	
+	// Comprobar contexto deonde no vienen datos
+	@Test
+	void testNoExisteExamenVerify() {
+
+		when(repository.findAllDelRepositorio()).thenReturn(Collections.emptyList());
+		when(preguntaRepository.buscarPreguntasPorExamenId(5L)).thenReturn(Datos.PREGUNTAS);
+		Examen examen = service.buscaExamenPorNombreConPreguntas("Matemáticas");
+		assertNull(examen);
+		// validar si se ya llamado un determinado método de nuestro mock
+		verify(repository).findAllDelRepositorio();
+		verify(preguntaRepository).buscarPreguntasPorExamenId(5L);
+
+	}
+
+}

@@ -1,0 +1,117 @@
+package org.aguzman.appmockito.ejemplos.services;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
+import org.aguzman.appmockito.ejemplos.models.Examen;
+import org.aguzman.appmockito.ejemplos.repositories.ExamenRepository;
+import org.aguzman.appmockito.ejemplos.repositories.PreguntaRepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class ExamenServiceImplTest {
+
+	// Dependencias del repositorio
+	ExamenRepository repository;	
+	PreguntaRepository preguntaRepository;
+
+	// Dependencias del servicio
+	ExamenService service;
+	
+	@BeforeEach
+	void setUp() {
+		
+		// Simulando antes de cada método (BeforeEach) que se recibe una implementación del repositorio
+		repository = mock(ExamenRepository.class);
+		preguntaRepository=mock( PreguntaRepository.class);
+		
+		// Pasamos estos repositorios simulados al servicio y lo tratamos como reales
+		service = new ExamenServiceImpl(repository, preguntaRepository);
+		
+	}
+
+	// Contexto para cuendo vienen datos
+	@Test
+	void findExamenPorNombre() {
+
+		// simulamos los datos que los traemoscomo constante de la clase Datos 
+		when(repository.findAllDelRepositorio()).thenReturn(Datos.EXAMENES);
+		// 2. Invocamos el método
+		Optional<Examen> examen = service.findExamenPorNombre("Matemáticas");
+
+		// 3. Comprobamos que exista el objeto
+		assertTrue(examen.isPresent());
+
+		// 4. Comprobamos que contenga los valores esperados expectativa/realidad
+		assertEquals(5L, examen.orElseThrow().getId());
+		assertEquals("Matemáticas", examen.orElseThrow().getNombre());
+
+	}
+
+	// Contexto para cuando nos viene una lista vacía
+	@Test
+	void findExamenPorNombreListaVacia() {
+
+		// simulamos los datos
+		List<Examen> datos = Collections.emptyList();
+
+		// Estamos simulando la obtención de datos
+		when(repository.findAllDelRepositorio()).thenReturn(datos);
+		// 2. Invocamos el método
+		Optional<Examen> examen = service.findExamenPorNombre("Matemáticas");
+
+		// 3. Comprobamos que NO exista el objeto
+		assertFalse(examen.isPresent());
+
+	}
+	
+	@Test
+	void testPreguntaExamen() {
+		
+		when(repository.findAllDelRepositorio()).thenReturn(Datos.EXAMENES);
+		when(preguntaRepository.buscarPreguntasPorExamenId(anyLong())).thenReturn(Datos.PREGUNTAS);
+		
+		Examen examen= service.buscaExamenPorNombreConPreguntas("Historia");
+		
+		
+		assertEquals(5,examen.getPreguntas().size());
+		assertEquals("aritmética",examen.getPreguntas().get(0));
+		assertTrue(examen.getPreguntas().contains("trigonometría"));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

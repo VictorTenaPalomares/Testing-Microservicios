@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Assertions"/>
+    <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.IRETURN"/>
+    <fullyQualifiedTypeName name="org.victorttt.junit_app.ejemplo.models.Cuenta"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+    <fullyQualifiedTypeName name="org.victorttt.junit_app.ejemplo.exceptions.DineroInsuficienteException"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Disabled"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.condition.EnabledOnOs"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.condition.OS"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.condition.DisabledOnOs"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.condition.EnabledForJreRange"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.condition.JRE"/>
+    <fullyQualifiedTypeName name="java.util.Properties"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Assumptions"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Nested"/>
+    <fullyQualifiedTypeName name="sun.awt.util.IdentityArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="org.aguzman.appmockito.ejemplos.repositories.ExamenRepository"/>
+    <fullyQualifiedTypeName name="org.aguzman.appmockito.ejemplos.repositories.ExamenRepositoryImpl"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="org.aguzman.appmockito.ejemplos.repositories.PreguntaRepository"/>
+    <fullyQualifiedTypeName name="org.mockito.internal.matchers.Any"/>
+    <fullyQualifiedTypeName name="org.junit.platform.engine.support.discovery.SelectorResolver.Match"/>
+    <fullyQualifiedTypeName name="org.mockito.MockitoAnnotations"/>
+    <fullyQualifiedTypeName name="org.mockito.junit.jupiter.MockitoExtension"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+    <fullyQualifiedTypeName name="org.mockito.Mockito"/>
+    <fullyQualifiedTypeName name="sun.management.counter.perf.PerfStringCounter"/>
+    <fullyQualifiedTypeName name="java.math.BigDecimal"/>
+    <fullyQualifiedTypeName name="org.victor.test.springboot.app.exceptions.DineroInsuficienteException"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,5 @@
+package org.victorttt.junit_app.ejemplo.models;
+
+public class Cuenta {
+
+}

@@ -1,0 +1,86 @@
+package org.victor.test.springboot.app;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.math.BigDecimal;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.victor.test.springboot.app.repositories.BancoRepository;
+import org.victor.test.springboot.app.repositories.CuentaRepository;
+import org.victor.test.springboot.app.services.CuentaService;
+import org.victor.test.springboot.app.services.CuentaServiceImpl;
+
+@SpringBootTest
+class SpringbootTestVictorApplicationTests {
+
+	//1. Creamos nuestros atributos (Mocks)
+	CuentaRepository cuentaRepository;
+	BancoRepository bancoRepository;
+	
+	//2. Traemos la capa de servicio como atributo
+	CuentaService service;
+	
+	//3. Antes de la ejecucion de cada método instanciamos atributos
+	//pero siempre burlándolos	
+	@BeforeEach
+	void setUp() {
+		cuentaRepository=mock(CuentaRepository.class); 
+		bancoRepository=mock(BancoRepository.class);
+		
+		//Implementación concreta de service
+		service=new CuentaServiceImpl(cuentaRepository,bancoRepository);		
+	}
+	
+	//4. Una vez lo hemos traido todo empezamos a probar
+	@Test
+	void contextLoads() {
+
+		//Dado que...
+		when(cuentaRepository.findById(1L)).thenReturn(Datos.CUENTA_001);
+		when(cuentaRepository.findById(2L)).thenReturn(Datos.CUENTA_002);
+		when(bancoRepository.findById(1L)).thenReturn(Datos.BANCO);
+		
+		//Cuando...
+		//La cuenta 1 transfiere dineros a la cuenta 2
+		BigDecimal saldoOrigen=service.revisarSaldo(1l);
+		BigDecimal saldoDestino=service.revisarSaldo(2L);
+		
+		//Entonces...
+		//Probamos expectativa vs realidad
+		assertEquals("1000",saldoOrigen.toPlainString());
+		assertEquals("2000",saldoDestino.toPlainString());
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

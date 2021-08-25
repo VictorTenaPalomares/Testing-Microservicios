@@ -1,0 +1,5 @@
+package org.victor.test.springboot.app.exceptions;
+
+public class DineroInsufuficienteException extends RuntimeException{
+
+}

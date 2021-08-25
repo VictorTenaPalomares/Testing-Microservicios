@@ -1,0 +1,13 @@
+package org.aguzman.appmockito.ejemplos.services;
+
+import org.aguzman.appmockito.ejemplos.models.Examen;
+
+public class ExamenServiceImpl implements ExamenService {
+
+	@Override
+	public Examen findExamenPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

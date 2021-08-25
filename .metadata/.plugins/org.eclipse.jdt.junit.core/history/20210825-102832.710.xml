@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="SpringbootTestVictorApplicationTests_ConAnotaciones" project="springboot_test_Victor" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="org.victor.test.springboot.app.SpringbootTestVictorApplicationTests_ConAnotaciones" time="0.108" displayname="SpringbootTestVictorApplicationTests_ConAnotaciones" uniqueid="[engine:junit-jupiter]/[class:org.victor.test.springboot.app.SpringbootTestVictorApplicationTests_ConAnotaciones]">
+    <testcase name="contextLoadsExceptions" classname="org.victor.test.springboot.app.SpringbootTestVictorApplicationTests_ConAnotaciones" time="0.052" displayname="contextLoadsExceptions()" uniqueid="[engine:junit-jupiter]/[class:org.victor.test.springboot.app.SpringbootTestVictorApplicationTests_ConAnotaciones]/[method:contextLoadsExceptions()]"/>
+    <testcase name="contextLoads3" classname="org.victor.test.springboot.app.SpringbootTestVictorApplicationTests_ConAnotaciones" time="0.019" displayname="contextLoads3()" uniqueid="[engine:junit-jupiter]/[class:org.victor.test.springboot.app.SpringbootTestVictorApplicationTests_ConAnotaciones]/[method:contextLoads3()]"/>
+    <testcase name="contextLoads" classname="org.victor.test.springboot.app.SpringbootTestVictorApplicationTests_ConAnotaciones" time="0.028" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:org.victor.test.springboot.app.SpringbootTestVictorApplicationTests_ConAnotaciones]/[method:contextLoads()]"/>
+  </testsuite>
+</testrun>

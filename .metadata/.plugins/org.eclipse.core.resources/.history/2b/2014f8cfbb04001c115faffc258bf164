@@ -1,0 +1,9 @@
+package org.aguzman.appmockito.ejemplos.services;
+
+import java.util.Optional;
+
+import org.aguzman.appmockito.ejemplos.models.Examen;
+
+public interface ExamenService {
+	Optional<Examen> findExamenPorNombre(String nombre);
+}

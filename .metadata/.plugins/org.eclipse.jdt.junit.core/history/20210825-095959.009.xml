@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="SpringbootTestVictorApplicationTests" project="springboot_test_Victor" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="org.victor.test.springboot.app.SpringbootTestVictorApplicationTests" time="0.648" displayname="SpringbootTestVictorApplicationTests" uniqueid="[engine:junit-jupiter]/[class:org.victor.test.springboot.app.SpringbootTestVictorApplicationTests]">
+    <testcase name="contextLoadsExceptions" classname="org.victor.test.springboot.app.SpringbootTestVictorApplicationTests" time="0.633" displayname="contextLoadsExceptions()" uniqueid="[engine:junit-jupiter]/[class:org.victor.test.springboot.app.SpringbootTestVictorApplicationTests]/[method:contextLoadsExceptions()]"/>
+    <testcase name="contextLoads" classname="org.victor.test.springboot.app.SpringbootTestVictorApplicationTests" time="0.013" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:org.victor.test.springboot.app.SpringbootTestVictorApplicationTests]/[method:contextLoads()]"/>
+  </testsuite>
+</testrun>

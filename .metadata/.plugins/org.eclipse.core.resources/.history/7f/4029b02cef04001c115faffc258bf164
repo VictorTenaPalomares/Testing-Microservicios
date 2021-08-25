@@ -1,0 +1,33 @@
+package org.victor.test.springboot.app.services;
+
+import java.math.BigDecimal;
+
+import org.victor.test.springboot.app.models.Cuenta;
+
+public class CuentaServiceImpl implements CuentaService {
+
+	@Override
+	public Cuenta findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int RevisarTotalTransferencias(Long bancoId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public BigDecimal revisarSaldo(Long cuentaId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void transferir(Long numCuentaOrigen, Long numCuentaDestino, BigDecimal monto) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

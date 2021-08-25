@@ -1,0 +1,27 @@
+package org.victorttt.junit_app.ejemplo.models;
+
+import java.math.BigDecimal;
+
+public class Banco {
+private String nombre;
+
+public String getNombre() {
+	return nombre;
+}
+
+public void setNombre(String nombre) {
+	this.nombre = nombre;
+}
+
+// Primero se ha escrito la prueba y luego el método
+public void transferir(Cuenta origen, Cuenta destino, BigDecimal monto) {
+	
+	// LLamamos al método que resta cantidad aplicado al objeto origen
+	origen.debito(monto);// Retira
+	
+	// Lo mismo pero al revés
+	destino.credito(monto);// Ingersa
+	
+}
+
+}

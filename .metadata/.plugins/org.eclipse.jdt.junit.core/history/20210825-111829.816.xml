@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="SpringbootTestApplicationTests" project="springboot_test_Andres" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="org.aguzman.test.springboot.app.SpringbootTestApplicationTests" time="0.0" displayname="SpringbootTestApplicationTests" uniqueid="[engine:junit-jupiter]/[class:org.aguzman.test.springboot.app.SpringbootTestApplicationTests]">
+    <testcase name="contextLoads2" classname="org.aguzman.test.springboot.app.SpringbootTestApplicationTests" time="0.0" displayname="contextLoads2()" uniqueid="[engine:junit-jupiter]/[class:org.aguzman.test.springboot.app.SpringbootTestApplicationTests]/[method:contextLoads2()]"/>
+    <testcase name="contextLoads3" classname="org.aguzman.test.springboot.app.SpringbootTestApplicationTests" time="0.0" displayname="contextLoads3()" uniqueid="[engine:junit-jupiter]/[class:org.aguzman.test.springboot.app.SpringbootTestApplicationTests]/[method:contextLoads3()]"/>
+    <testcase name="contextLoads" classname="org.aguzman.test.springboot.app.SpringbootTestApplicationTests" time="0.0" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:org.aguzman.test.springboot.app.SpringbootTestApplicationTests]/[method:contextLoads()]"/>
+  </testsuite>
+</testrun>
